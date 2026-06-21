@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.androidApplication)
@@ -51,7 +52,7 @@ android {
 
     signingConfigs {
         create("release") {
-            val properties = java.util.Properties()
+            val properties = Properties()
             val propertiesFile = rootProject.file("local.properties")
             if (propertiesFile.exists()) {
                 properties.load(propertiesFile.inputStream())
