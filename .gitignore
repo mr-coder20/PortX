@@ -29,5 +29,10 @@ local.properties
 # OS specific
 .DS_Store
 Thumbs.db
-n/Final_Release/n/icons/banner.png
-n/banner.pngn/screenshot.png
+
+# Binaries and Releases
+/Final_Release/
+*.msi
+*.apk
+*.dmg
+*.deb

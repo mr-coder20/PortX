@@ -413,7 +413,7 @@ fun ActiveServicesCard(state: ScanUIState, modifier: Modifier = Modifier, accent
             Box(modifier = Modifier.weight(1f)) {
                 LazyColumn(state = listState, verticalArrangement = Arrangement.spacedBy(10.dp), modifier = Modifier.fillMaxSize(), contentPadding = PaddingValues(bottom = 16.dp)) {
                     val result = state.result
-                    val portsToShow = result?.openPorts?.sorted()?.map { portNumber -> 
+                    val portsToShow = result?.openPorts?.distinct()?.sorted()?.map { portNumber ->
                         val banner = result.portBanners[portNumber] ?: ""
                         val service = result.portServices[portNumber] ?: getMockDescription(portNumber)
                         val description = banner.ifEmpty { service }
