@@ -1,11 +1,16 @@
 package com.mrcoder20.portx.domain
 
 import com.mrcoder20.portx.domain.model.ScanResult
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 object ScanManager {
+    private val _uiEvents = MutableSharedFlow<ScanUIEvent>()
+    val uiEvents = _uiEvents.asSharedFlow()
+
     private val _progress = MutableStateFlow(0)
     val progress: StateFlow<Int> = _progress.asStateFlow()
 
@@ -35,8 +40,16 @@ object ScanManager {
         _currentResult.value = result
     }
 
+    suspend fun triggerUiEvent(event: ScanUIEvent) {
+        _uiEvents.emit(event)
+    }
+
     fun setError(message: String?) {
         _error.value = message
         _isScanning.value = false
     }
+}
+
+sealed class ScanUIEvent {
+    data object RequestNotificationPermission : ScanUIEvent()
 }
