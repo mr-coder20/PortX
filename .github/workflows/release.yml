@@ -15,13 +15,13 @@ jobs:
         include:
           - os: ubuntu-latest
             task: :desktopApp:packageDeb
-            artifact: desktopApp/build/compose/binaries/main/*/deb/*.deb
+            artifact: desktopApp/build/compose/binaries/**/*.deb
           - os: macos-latest
             task: :desktopApp:packageDmg
-            artifact: desktopApp/build/compose/binaries/main/*/dmg/*.dmg
+            artifact: desktopApp/build/compose/binaries/**/*.dmg
           - os: windows-latest
             task: :desktopApp:packageReleaseMsi
-            artifact: desktopApp/build/compose/binaries/main/*/msi/*.msi
+            artifact: desktopApp/build/compose/binaries/**/*.msi
 
     steps:
       - uses: actions/checkout@v4
