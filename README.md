@@ -1,11 +1,14 @@
 # PortX: Ultra-Fast Network Port Scanner (KMP)
 ## 🚀 Powered by the "Ultra Engine" v5.0.0
 
-![PortX Banner](banner.png)
+<p align="center">
+  <img src="https://github.com/mr-coder20/PortX/releases/download/v5.0.0/banner.png" alt="PortX Banner">
+</p>
 
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0.0-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
 [![Compose Multiplatform](https://img.shields.io/badge/Compose-Multiplatform-orange.svg?style=flat)](https://github.com/JetBrains/compose-multiplatform)
 [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-green.svg?style=flat)](#)
+[![Release](https://img.shields.io/github/v/release/mr-coder20/PortX?label=Latest%20Version&color=blue)](https://github.com/mr-coder20/PortX/releases/latest)
 
 ---
 
@@ -17,10 +20,22 @@
 
 ---
 
+## 📥 Download | دریافت برنامه
+**[EN]** You can download the latest signed binaries for **Android** and **Windows** from the official releases page:  
+**[FA]** می‌توانید آخرین نسخه‌های رسمی و ساین شده برای **اندروید** و **ویندوز** را از صفحه ریلیزها دریافت کنید:
+
+<p align="center">
+  <a href="https://github.com/mr-coder20/PortX/releases/latest">
+    <img src="https://img.shields.io/badge/Download-Latest%20Release-brightgreen?style=for-the-badge&logo=github" alt="Download PortX">
+  </a>
+</p>
+
+---
+
 ## 📸 Interface Preview | پیش‌نمایش محیط برنامه
 
 <p align="center">
-  <img src="screenshot.png" width="600" alt="PortX UI Screenshot">
+  <img src="https://github.com/mr-coder20/PortX/releases/download/v5.0.0/screenshot.png" width="800" alt="PortX UI Screenshot">
 </p>
 
 ---
