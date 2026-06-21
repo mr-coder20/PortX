@@ -44,7 +44,7 @@ compose.desktop {
                 iconFile.set(project.file("src/main/resources/ic1.icns"))
             }
             linux {
-                iconFile.set(project.file("src/main/resources/ic1.png"))
+                iconFile.set(project.file("../shared/src/commonMain/composeResources/drawable/ic1.png"))
             }
         }
     }
