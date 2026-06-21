@@ -1,0 +1,71 @@
+import kotlin.collections.List;
+import kotlin.collections.Map;
+import kotlin.Int;
+import kotlin.String;
+import kotlin.Boolean;
+
+CREATE TABLE ScanEntity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    target TEXT NOT NULL,
+    openPorts TEXT AS List<Int> NOT NULL,
+    portBanners TEXT AS Map<Int, String> NOT NULL,
+    portServices TEXT AS Map<Int, String> NOT NULL DEFAULT '',
+    timestamp INTEGER NOT NULL,
+    securityScore INTEGER NOT NULL,
+    deviceName TEXT,
+    osFingerprint TEXT,
+    scanType TEXT,
+    bannerGrabbing INTEGER AS Boolean NOT NULL DEFAULT 0,
+    concurrentScans INTEGER NOT NULL,
+    timeout INTEGER NOT NULL
+);
+
+CREATE TABLE SettingsEntity (
+    id INTEGER PRIMARY KEY NOT NULL DEFAULT 0 CHECK (id = 0),
+    language TEXT NOT NULL DEFAULT 'en',
+    theme TEXT NOT NULL DEFAULT 'DARK',
+    accentColor INTEGER NOT NULL DEFAULT 4278243839
+);
+
+CREATE TABLE DeviceEntity (
+    ipAddress TEXT PRIMARY KEY,
+    hostname TEXT,
+    osName TEXT,
+    osVersion TEXT,
+    macAddress TEXT,
+    vendor TEXT
+);
+
+insertScan:
+INSERT INTO ScanEntity (
+    target, openPorts, portBanners, portServices, timestamp, securityScore, deviceName, osFingerprint,
+    scanType, bannerGrabbing, concurrentScans, timeout
+)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+selectAllScans:
+SELECT * FROM ScanEntity ORDER BY timestamp DESC;
+
+selectLatestScan:
+SELECT * FROM ScanEntity ORDER BY timestamp DESC LIMIT 1;
+
+insertDevice:
+INSERT OR REPLACE INTO DeviceEntity (ipAddress, hostname, osName, osVersion, macAddress, vendor)
+VALUES (?, ?, ?, ?, ?, ?);
+
+selectDeviceByIp:
+SELECT * FROM DeviceEntity WHERE ipAddress = ?;
+
+deleteScanById:
+DELETE FROM ScanEntity WHERE id = ?;
+
+deleteAllScans:
+DELETE FROM ScanEntity;
+
+-- Settings Queries
+getSettings:
+SELECT * FROM SettingsEntity WHERE id = 0;
+
+upsertSettings:
+INSERT OR REPLACE INTO SettingsEntity (id, language, theme, accentColor)
+VALUES (0, ?, ?, ?);

@@ -1,0 +1,32 @@
+# Standard Kotlin/Android ignore
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# PortX Specific
+/release.jks
+*.jks
+*.keystore
+/desktopApp/build
+/androidApp/build
+/shared/build
+
+# Compose Multiplatform
+/composeResources/generated
+
+# OS specific
+.DS_Store
+Thumbs.db
+n/Final_Release/n/icons/banner.png
