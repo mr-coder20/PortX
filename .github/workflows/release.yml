@@ -49,7 +49,7 @@ jobs:
           }
 
       - name: Upload Windows MSI Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: windows-msi
           path: staged-artifacts/*.msi
@@ -80,7 +80,7 @@ jobs:
           find desktopApp/build -name "*.deb" -exec cp {} staged-artifacts/ \;
 
       - name: Upload Linux DEB Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: linux-deb
           path: staged-artifacts/*.deb
@@ -120,7 +120,7 @@ jobs:
           find androidApp/build/outputs/apk -name "*.apk" -exec cp {} staged-artifacts/ \;
 
       - name: Upload Android APK Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: android-apk
           path: staged-artifacts/*.apk

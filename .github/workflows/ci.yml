@@ -40,7 +40,7 @@ jobs:
 
       - name: Publish Test Results Artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: jvm-test-results
           path: shared/build/reports/tests/jvmTest/
